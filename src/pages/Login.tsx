@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../utils/AuthProvider";
-import axios from "../utils/AxiosInstance";
+import AxiosInstance from "../utils/AxiosInstance";
 import { useMutation } from "@tanstack/react-query";
 
 export type LoginInput = {
@@ -20,7 +20,7 @@ export const Login = () => {
 
   const handleLogin = async (data: LoginInput) => {
     try {
-      const res = await axios.post<{ access_token: string }>(
+      const res = await AxiosInstance.post<{ access_token: string }>(
         "/api/auth/login",
         {
           email: data.email,
