@@ -72,9 +72,13 @@ const Player = () => {
           List of Players
         </motion.h2>
         <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-          {isFetching ? (Array.from({ length: 4 }).map((_, index) => (
-            <PlayerSkeleton key={index} />
-          ))) : (
+          {isFetching ? (
+            <div className="animate-pulse">
+              <div className="h-8 bg-gray-800 rounded w-3/4 mb-4"></div>
+              <div className="h-4 bg-gray-800 rounded w-1/2 mb-4"></div>
+              <div className="h-4 bg-gray-800 rounded w-1/4"></div>
+            </div>
+          ) : (
             data?.data.map((player) => (
               <motion.div 
                 key={player.id} 
