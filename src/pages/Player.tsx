@@ -19,25 +19,6 @@ const fetchPlayerList = async (token: string) => {
   });
 };
 
-const PlayerSkeleton = () => {
-  return (
-    <motion.div 
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
-      className="group relative"
-    >
-      <div className="aspect-square w-full rounded-md bg-gray-800 animate-pulse lg:aspect-auto lg:h-80"></div>
-      <div className="mt-4 flex justify-between">
-        <div>
-          <div className="h-4 bg-gray-800 rounded animate-pulse w-3/4"></div>
-          <div className="mt-1 h-3 bg-gray-800 rounded animate-pulse w-2/3"></div>
-        </div>
-        <div className="h-4 bg-gray-800 rounded animate-pulse w-1/4"></div>
-      </div>
-    </motion.div>
-  );
-};
 
 const Player = () => {
   const {getToken} = useAuth();
